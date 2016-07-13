@@ -1,0 +1,221 @@
+<html>
+<body>
+</body>
+<script>
+var n=prompt("please enter the number of stations in the traverse","")
+var v=n
+var body = document.body,
+  tbl = document.createElement('table');
+  tbll = document.createElement('table');
+  var trr = tbll.insertRow();
+      
+        
+	    var stnt=trr.insertCell(0);
+	    var dist=trr.insertCell(0);
+		var sec=trr.insertCell(0);
+		var min=trr.insertCell(0);
+		var deg=trr.insertCell(0);
+		var stnf= trr.insertCell(0);
+	
+		
+		stnt.innerHTML="station to"
+		dist.innerHTML="distance"
+		sec.innerHTML="angle(sec)"
+		min.innerHTML="angle(min)"
+		deg.innerHTML="angle(deg)"
+		stnf.innerHTML="station from"
+dist.style.width = '150px';stnf.style.width = '160px';deg.style.width = '160px';min.style.width = '150px';
+sec.style.width = '120px';
+tbl.style.width = '100px';
+tbl.style.border = '2px solid yellow';
+var tr, td, tf, input, clone;
+for (var i = 0; i < n; i++) {
+  tr = tbl.insertRow();
+        
+		var t6 = tr.insertCell(0);
+		var t7 = tr.insertCell(0);
+		var t8 = tr.insertCell(0);
+		var t1 = tr.insertCell(0);
+		var t9 = tr.insertCell(0);
+		var t10 = tr.insertCell(0);
+		var t11 = tr.insertCell(0);
+		var t12 = tr.insertCell(0);
+		var t13 = tr.insertCell(0);
+		
+  input = document.createElement('input');
+  input.name = "statnf" + i;
+  input.id = "statnf" + i;
+  input.value = "";
+  input.size= "15"
+  t13.appendChild(input);
+  clone1 = input.cloneNode();
+  clone1.name = "degr" + i;
+  clone1.id = "degr" + i;
+  clone1.size= "15"
+  t12.appendChild(clone1);
+  clone2 = input.cloneNode();
+  clone2.name = "minu" + i;
+  clone2.id = "minu" + i;
+  clone2.size= "15"
+  t11.appendChild(clone2);
+  clone3 = input.cloneNode();
+  clone3.name = "seco" + i;
+  clone3.id = "seco" + i;
+  clone3.size= "15"
+  t10.appendChild(clone3);
+  clone4 = input.cloneNode();
+  clone4.name = "dista" + i;
+  clone4.id = "dista" + i;
+  clone4.size= "15"
+  t9.appendChild(clone4);
+  clone5 = input.cloneNode();
+  clone5.name = "bearn" + i;
+  clone5.id = "bearn" + i;
+  clone5.size= "15"
+  clone5.value = "bearing";
+  clone5.disabled = true;
+  t8.appendChild(clone5);
+  clone6 = input.cloneNode();
+  clone6.name = "xcord" + i;
+  clone6.id = "xcord" + i;
+  clone6.size= "15"
+  clone6.value = "x-coordinate";
+  clone6.disabled = true;
+  t7.appendChild(clone6);
+  clone7 = input.cloneNode();
+  clone7.name = "ycord" + i;
+  clone7.id = "ycord" + i;
+  clone7.value = "y-coordinate";
+  clone7.size= "15"
+  clone7.disabled = true;
+  t6.appendChild(clone7);
+  clone12 = input.cloneNode();
+  clone12.name = "stnto" + i;
+  clone12.id = "stnto" + i;
+  clone12.size= "15"
+  t1.appendChild(clone12);
+} 
+      for (var e = 0; e < 1; e++) {
+        var tr1 = tbl.insertRow();
+        var t2 = tr1.insertCell(0);
+		var t3 = tr1.insertCell(0);
+		var t4 = tr1.insertCell(0);
+		var t5 = tr1.insertCell(0);
+  clone8 = input.cloneNode();
+  clone8.name = "xcordo";
+  clone8.id = "xcordo";
+  clone8.value = "x-cord. of occupied";
+  clone8.size= "15"
+  t5.appendChild(clone8);
+  clone9 = input.cloneNode();
+  clone9.name = "ycordo";
+  clone9.id = "ycordo";
+  clone9.value = "y-cord. of occupied";
+  clone9.size= "15"
+  t4.appendChild(clone9);
+  clone10 = input.cloneNode();
+  clone10.name = "xcordb";
+  clone10.id = "xcordb";
+  clone10.size= "15"
+  clone10.value = "x-cord. of back statn";
+  t3.appendChild(clone10);
+  clone11 = input.cloneNode();
+  clone11.name = "ycordb";
+  clone11.id = "ycordb";
+  clone11.size= "15"
+  clone11.value= "y-cord of back statn"
+  t2.appendChild(clone11);
+  }
+
+var form = document.createElement("form");
+form.appendChild(tbl);
+body.appendChild(tbll);
+body.appendChild(form);
+var submit = document.createElement("input");
+submit.type = "submit";
+form.appendChild(submit);
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  var degg, minn, secc, distt, xcoroo, ycoroo, xcorbb, ycorbb, bea, xcordd, ycordd;
+  for (var r = 0; r < v; r++) {
+   
+	degg = document.getElementById('degr' + r);
+	minn = document.getElementById('minu' + r);
+	secc = document.getElementById('seco' + r);
+	distt = document.getElementById('dista' + r);
+	bea = document.getElementById('bearn' + r);
+	xcordd = document.getElementById('xcord' + r);
+    ycordd = document.getElementById('ycord' + r);
+	
+	for (var e = 0; e < 1; e++) {
+    xcoroo = document.getElementById('xcordo');
+	ycoroo = document.getElementById('ycordo');
+	xcorbb = document.getElementById('xcordb');
+	ycorbb = document.getElementById('ycordb');	
+	
+	var ce= (xcoroo.value) - (xcorbb.value)
+	var cn= (ycoroo.value) - (ycorbb.value)
+	
+	var ang= ce/cn
+	if (ang<0){
+ang=ang*(-1)
+}
+var ang=Math.atan(ang)
+var ang= ang *57.2957795
+if (ce < 0 && cn < 0)
+{
+fb=+180 + +ang
+}
+if (ce > 0 && cn > 0)
+{
+fb=ang
+}
+if (ce > 0 && cn < 0)
+{
+fb=180-ang
+}
+if (ce < 0 && cn > 0)
+{
+fb=360-ang
+}
+bb=+180+ +fb
+
+if (bb > 360)
+{
+bb=bb-360
+}}
+
+dega=(degg.value)
+mina=(minn.value)
+mina=mina/60
+seca=(secc.value)
+seca=seca/3600           // conversion of degrees minutes and seconds to decimal degrees
+obsa=+dega + +mina + +seca
+fb1=+obsa + +bb
+if (fb1 > 360)
+{
+fb1=fb1-360
+}
+fb11=fb1*0.0174555555555555   // conversion of angles to radians
+dist=(distt.value)
+cee=dist*Math.sin(fb11)
+cnn=dist*Math.cos(fb11)    // change in eastings and northings calculation
+xcordi=+(xcoroo.value) + +cee
+ycordi=+(ycoroo.value) + +cnn   
+deg3=Math.floor(fb1)
+minfb=fb1-deg3
+minfb=minfb*60
+min3=Math.floor(minfb)
+sec3=minfb-min3
+sec3=sec3*60
+sec3=Math.floor(sec3)
+
+bea.value = +deg3 + "^" +min3 + "'" +sec3 + "''"
+xcordd.value =xcordi ;
+ycordd.value = ycordi
+  }
+}
+);
+ </script>
+</html>

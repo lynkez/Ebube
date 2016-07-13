@@ -1,0 +1,137 @@
+<html>
+<body>
+</body>
+<script>
+var n=prompt("please enter the number of stations in the traverse","")
+var body = document.body,
+tbll = document.createElement('table');
+tbl = document.createElement('table');
+       
+        
+	
+	    var trr = tbll.insertRow();
+	    var stnt=trr.insertCell(0);
+	    var ycorb=trr.insertCell(0);
+	    var xcorb=trr.insertCell(0);
+	    var ycoro=trr.insertCell(0);
+	    var xcoro=trr.insertCell(0);
+	    var dist=trr.insertCell(0);
+		var obsa=trr.insertCell(0);
+		var stnf= trr.insertCell(0);
+		stnt.innerHTML="station to"
+		ycorb.innerHTML="y-coordinate of back station"
+		xcorb.innerHTML="x-coordinate of back station"
+		ycoro.innerHTML="y-coordinate of occupied station"
+		xcoro.innerHTML="x-coordinate of occupied station"
+		dist.innerHTML="distance"
+		obsa.innerHTML="observed angle"
+		
+		stnf.innerHTML="station from"
+		dist.style.width = '235px';stnf.style.width = '266px';obsa.style.width = '240px';xcoro.style.width = '226px';ycoro.style.width = '260px';xcorb.style.width = '200px';
+		ycorb.style.width = '220px';stnt.style.width = '95px';
+		
+      tbl.style.width = '2px';
+      tbl.style.border = '2px solid green';
+	  
+		
+       for (var i = 0; i < n; i++) {
+	    
+        var tr = tbl.insertRow();
+		var t1 = tr.insertCell(0);
+        var t2 = tr.insertCell(0);
+		var t3 = tr.insertCell(0);
+		var t4 = tr.insertCell(0);
+		var t5 = tr.insertCell(0);
+		var t6 = tr.insertCell(0);
+		var t7 = tr.insertCell(0);
+		var t8 = tr.insertCell(0);
+		
+		
+        var input = document.createElement('input');
+        input.name = "inputa" + i ;
+        input.id = "inputa" + i; 
+        input.value = "";
+        var input1 = document.createElement('input');
+        input1.name = "inputa1" + i ;
+        input1.id = "inputa1" + i; 
+        input1.value = "";
+		var input2 = document.createElement('input');
+        input2.name = "inputa2" + i ;
+        input2.id = "inputa2" + i; 
+        input2.value = "";
+		var input3 = document.createElement('input');
+        input3.name = "inputa3" + i ;
+        input3.id = "inputa3" + i; 
+        input3.value = "";
+		var input4 = document.createElement('input');
+        input4.name = "inputa4" + i ;
+        input4.id = "inputa4" + i; 
+        input4.value = "";
+		var input5 = document.createElement('input');
+        input5.name = "inputa5" + i ;
+        input5.id = "inputa5" + i; 
+        input5.value = "";
+		var input6 = document.createElement('input');
+        input6.name = "inputa6" + i ;
+        input6.id = "inputa6" + i; 
+        input6.value = "";
+		var input7 = document.createElement('input');
+        input7.name = "inputa7" + i ;
+        input7.id = "inputa7" + i; 
+        input7.value = "";
+        t1.appendChild(input);
+        t2.appendChild(input1);
+		t3.appendChild(input2);
+		t4.appendChild(input3);
+		t5.appendChild(input4);
+		t6.appendChild(input5);
+		t7.appendChild(input6);
+		t8.appendChild(input7);
+        
+      }
+	   var form = document.createElement("form");
+      
+      var submit = document.createElement("input");
+      submit.type = "submit";
+	  
+	 var i=0 
+	 do {
+	    form.addEventListener('submit',
+     		
+	
+		function(event) {
+		
+    event.preventDefault();
+	
+	var c =document.getElementById("inputa" +i).value;
+	document.write(c);
+	
+	
+
+	  
+      
+}
+
+);
+i++
+}
+	while( i < n);
+     
+       
+      
+      
+        body.appendChild(tbl);
+	    form.appendChild(tbl);
+		body.appendChild(tbll);
+		body.appendChild(form);
+		 form.appendChild(submit);
+
+
+    tableCreate();
+	
+	
+
+	  
+	
+  </script>
+</html>

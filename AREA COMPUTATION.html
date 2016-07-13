@@ -1,0 +1,94 @@
+<html>
+<body>
+</body>
+<script>
+var n=prompt("please enter the number of stations in the traverse","")
+var v=n
+var q=n-1
+var body = document.body,
+  tbl = document.createElement('table');
+  tbll = document.createElement('table');
+  var trr = tbll.insertRow();
+      
+        var xcord=trr.insertCell(0);
+	    var ycord=trr.insertCell(0);
+	    
+	
+		ycord.innerHTML="x-coordniate"
+		xcord.innerHTML="y-coordinate"
+		
+		ycord.style.width = '200px';xcord.style.width = '170px';
+tbl.style.width = '100px';
+tbl.style.border = '2px solid yellow';
+var tr, td, tf, input, clone;
+for (var i = 0; i < v; i++) {
+  tr = tbl.insertRow();
+        
+        var t2 = tr.insertCell(0);
+		var t3 = tr.insertCell(0);
+		
+		
+  input = document.createElement('input');
+  input.name = "xcord" + i;
+  input.id = "xcord" + i;
+    input.value = "";
+	 input.size= "15"
+	 t3.appendChild(input);
+  clone1 = input.cloneNode();
+  clone1.name = "ycord" + i;
+  clone1.id = "ycord" + i;
+  clone1.size= "15"
+  t2.appendChild(clone1);
+}
+for (var e = 0; e < 1; e++) {
+tra = tbl.insertRow();
+var t1 = tra.insertCell(0);
+  clone2 = input.cloneNode();
+  clone2.name = "area";
+  clone2.id = "area";
+  clone2.size= "15"
+  clone2.value = "AREA";
+  clone2.disabled = true;
+  t1.appendChild(clone2);}
+
+var form = document.createElement("form");
+form.appendChild(tbl);
+body.appendChild(tbll);
+body.appendChild(form);
+var submit = document.createElement("input");
+submit.type = "submit";
+form.appendChild(submit);
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  var degg, minn, secc, distt, xcoroo, ycoroo, xcorbb, ycorbb, bea, xcordd, ycordd;
+  xy1=0
+  yx1=0
+  for (var r = 0; r<q; r++) {
+ 
+    xcordi = document.getElementById('xcord' + (+r + +1));
+	 
+	  ycordi = document.getElementById('ycord' + (r));
+	   xcordii= document.getElementById('xcord' + (r));
+	   ycordii= document.getElementById('ycord' + (+r + +1));
+	   yx= (ycordi.value) * (xcordi.value)
+       xy= (xcordii.value) * (ycordii.value)
+	   xy1=+xy1 + +xy
+	   yx1=+yx1 + +yx
+	   yx2=xy1
+  }
+  last1=document.getElementById('xcord0');
+  last2=document.getElementById('ycord0');
+  last10=(last1.value)*(ycordii.value)
+  last20=(last2.value)*(xcordi.value)
+  xy1=+xy1 + +last20
+  yx1=+yx1 + +last10
+  ares1= xy1 - yx1
+  ares= ares1/2
+  ares=Math.floor(ares)
+  
+  are= document.getElementById('area');
+  are.value = ares + "SqUnits"
+});
+ </script>
+</html>
